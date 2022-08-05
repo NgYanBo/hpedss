@@ -1,0 +1,18 @@
+apiVersion: "kubedirector.hpe.com/v1beta1"
+kind: "KubeDirectorCluster"
+metadata:
+  name: "dataikucluster"
+spec:
+  app: dataikudss604
+  roles:
+  - id: dssnode
+    members: 1
+    # podLabels:
+    #   hpecp.hpe.com/dtap: inject
+    resources:
+      requests:
+        memory: "512Mi"
+        cpu: "100m"
+      limits:
+        memory: "8Gi"
+        cpu: "2"
